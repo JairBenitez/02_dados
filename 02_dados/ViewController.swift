@@ -29,26 +29,69 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        generaRandomIndex()
+        
     }
 
+    
+    // responder a metodos del dispositivo, para poder utilizar movimientos
+    // del dispositivo
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    
+    // Finaliza movimiento
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            generaRandomIndex()
+        }
+        
+    }
+    
+    
     @IBAction func botonTirarPresionado(_ sender: UIButton) {
         
         generaRandomIndex()
     }
     
     
-    // Genera indice aleatorio
+    /*
+     * Genera número aleatroio de cara y carga la imagen
+     * correspondiente.
+     *
+     */
+    
     func generaRandomIndex() {
         
         randomIndexDadoIzq = Int( arc4random_uniform(nCaras) )
         randomIndexDadoDer = Int( arc4random_uniform(nCaras) )
         
-        self.imageViewDadoIzq.image = UIImage( named: caras[randomIndexDadoIzq] )
-        self.imageViewDadoDer.image = UIImage( named: caras[randomIndexDadoDer] )
         
-        print( randomIndexDadoDer )
+     
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       options: UIView.AnimationOptions.curveEaseInOut,
+                       animations: {
+                        self.imageViewDadoIzq.transform = CGAffineTransform(rotationAngle:  CGFloat.pi )
+                            .concatenating( CGAffineTransform(translationX: -40, y: 0) )
+                        
+                        self.imageViewDadoDer.transform = CGAffineTransform(rotationAngle:  CGFloat.pi )
+                            .concatenating( CGAffineTransform(translationX: 40, y: 0) )
+        }) { (completed) in
+            
+            self.imageViewDadoDer.transform = CGAffineTransform.identity
+            self.imageViewDadoIzq.transform = CGAffineTransform.identity
+            
+            self.imageViewDadoIzq.image = UIImage( named: self.caras[self.randomIndexDadoIzq] )
+            self.imageViewDadoDer.image = UIImage( named: self.caras[self.randomIndexDadoDer] )
+        }
     }
+    
+    
+    
 }
 
