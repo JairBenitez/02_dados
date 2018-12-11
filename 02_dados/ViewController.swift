@@ -10,11 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var imageViewDadoIzq: UIImageView!
+    @IBOutlet weak var imageViewDadoDer: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func botonTirarPresionado(_ sender: UIButton) {
+    }
+    
 }
 

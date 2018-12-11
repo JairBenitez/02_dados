@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,72 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_2_dados" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fondo_casino" translatesAutoresizingMaskIntoConstraints="NO" id="hrj-kd-jsY">
+                                <rect key="frame" x="0.0" y="0.0" width="323" height="812"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="casino" translatesAutoresizingMaskIntoConstraints="NO" id="OUB-KV-2aU">
+                                <rect key="frame" x="83.666666666666686" y="104" width="208" height="208"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="208" id="5ND-Xm-aT3"/>
+                                    <constraint firstAttribute="width" constant="208" id="Ac6-l3-bfq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dado1" translatesAutoresizingMaskIntoConstraints="NO" id="Ci8-a9-6TA">
+                                <rect key="frame" x="197.66666666666666" y="372" width="99.999999999999972" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="EPe-lt-41f"/>
+                                    <constraint firstAttribute="height" constant="100" id="ii4-Te-Glj"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dado1" translatesAutoresizingMaskIntoConstraints="NO" id="hRF-EN-agR">
+                                <rect key="frame" x="77.666666666666671" y="372" width="100.00000000000001" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="hac-5D-z8R"/>
+                                    <constraint firstAttribute="width" constant="100" id="kKK-R0-RhP"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mti-KC-IYx">
+                                <rect key="frame" x="84" y="581" width="207" height="47"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="29"/>
+                                <state key="normal" title="Tirar los dados"/>
+                                <connections>
+                                    <action selector="botonTirarPresionado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HXT-nZ-7Ue"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OUB-KV-2aU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="7d4-4S-rVX"/>
+                            <constraint firstItem="Ci8-a9-6TA" firstAttribute="top" secondItem="OUB-KV-2aU" secondAttribute="bottom" constant="60" id="9lC-l8-6oG"/>
+                            <constraint firstItem="hRF-EN-agR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-60" id="DGb-bH-gVv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mti-KC-IYx" secondAttribute="bottom" constant="150" id="EDw-fZ-ptx"/>
+                            <constraint firstItem="Ci8-a9-6TA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="60" id="EGY-DM-a7J"/>
+                            <constraint firstItem="mti-KC-IYx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FZr-y8-fpx"/>
+                            <constraint firstItem="OUB-KV-2aU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QVe-pI-M8c"/>
+                            <constraint firstItem="hRF-EN-agR" firstAttribute="top" secondItem="OUB-KV-2aU" secondAttribute="bottom" constant="60" id="aVA-Ys-2y6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageViewDadoDer" destination="Ci8-a9-6TA" id="dkI-L0-t8l"/>
+                        <outlet property="imageViewDadoIzq" destination="hRF-EN-agR" id="Cra-aS-xdf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="casino" width="208" height="208"/>
+        <image name="dado1" width="170" height="170"/>
+        <image name="fondo_casino" width="323" height="193"/>
+    </resources>
 </document>
